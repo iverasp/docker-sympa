@@ -15,7 +15,7 @@ sleep 1
 docker rm sympa || true
 sleep 1
 docker run --detach=true --restart=always --name sympa --hostname sympa \
-  --env SET_REAL_IP_FROM=0.0.0.0/0 \
+  --env SET_REAL_IP_FROM=172.17.0.0/16 \
   --env REMOTES=mail \
   --volume /srv/var/hosts:/etc/hosts:ro \
   --volume /srv/var/log/sympa:/var/log/sympa \
